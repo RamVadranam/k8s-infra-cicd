@@ -6,10 +6,10 @@ This project is a simple Flask-based application deployed to a local Kubernetes 
 
 For a detailed guide on this project, check out the [Medium article](https://medium.com/@ramchandra-vadranam/building-a-complete-ci-cd-pipeline-for-eks-with-aws-ecr-codepipeline-codebuild-and-helm-98ca37bc6b50) that explains the setup and deployment process.
 
-
 ## Prerequisites
 
 Ensure you have the following tools installed:
+
 - [Docker](https://docs.docker.com/get-docker/)
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
@@ -34,17 +34,18 @@ my-app/
 │       └── service.yaml         # Kubernetes service configuration
 └── infrastructure/              # (Optional) Infrastructure code
 ```
+
 **`Setup Instructions`**
 
-***1. Start Minikube***
+**_1. Start Minikube_**
 
 Start Minikube with the Docker driver:
 
-``` 
-minikube start --driver=docker 
+```
+minikube start --driver=docker
 ```
 
-***2. Set Up Docker to Use Minikube's Environment***
+**_2. Set Up Docker to Use Minikube's Environment_**
 
 Configure Docker to use Minikube's Docker daemon, allowing Minikube to access local Docker images:
 
@@ -52,14 +53,15 @@ Configure Docker to use Minikube's Docker daemon, allowing Minikube to access lo
 eval $(minikube docker-env)
 ```
 
-***3. Build the Docker Image***
+**_3. Build the Docker Image_**
 
 Build and tag the Docker image for the application:
 
 ```
 docker build -t local/my-app:latest .
 ```
-***4. Configure Helm***
+
+**_4. Configure Helm_**
 
 Make sure your `values.yaml` file in `helm/` is configured as follows:
 
@@ -71,25 +73,26 @@ image:
   pullPolicy: "IfNotPresent"   # Use local image if available
 ```
 
-***5. Deploy the Application Using Helm***
+**_5. Deploy the Application Using Helm_**
 
 Install or upgrade the Helm release:
-
 
 ```
 helm upgrade --install my-app ./helm --set image.repository=local/my-app --set image.tag=latest
 ```
 
-***6. Expose the Application***
+**_6. Expose the Application_**
 
 Since Minikube ClusterIP services aren't accessible outside the cluster by default, you can use either Minikube's tunnel feature or port-forwarding to access the application.
 
 **Option 1: Use Minikube Service Tunnel**
 
 This command will provide a URL for local access:
+
 ```
 minikube service my-app
 ```
+
 **Option 2: Use Port Forwarding**
 
 Alternatively, forward the service to your local machine:
@@ -109,14 +112,19 @@ When making changes to the application, follow these steps to deploy the updates
 ```
 docker build -t local/my-app:latest .
 ```
+
 **2.Upgrade the Helm Release:**
+
 ```
 helm upgrade --install my-app ./helm --set image.repository=local/my-app --set image.tag=latest
 ```
+
 **3.Verify the Update: Check that the pods are running the latest version**
+
 ```
 kubectl get pods
 ```
+
 ## Troubleshooting
 
 **Common Issues**
@@ -132,20 +140,18 @@ Re-run the Docker build command after eval $(minikube docker-env).
 ```
 kubectl logs <pod-name>
 ```
+
 **4.Describe Pod for Details:**
+
 ```
 kubectl describe pod <pod-name>
 ```
+
+**Docker Run**
 ![Alt text](./images/docker.png)
 
+**Minikube Service**
+![Alt text](./images/minikube.png)
 
-
-<!-- ![Alt text](./images/minikube.png) -->
-
-
-
+**localhost**
 ![Alt text](./images/app.png)
-
-
-
-
