@@ -147,14 +147,14 @@ kubectl logs <pod-name>
 kubectl describe pod <pod-name>
 ```
 
-**Docker Run**
+**`Docker Run`**
 
 ![Alt text](./images/docker.png)
 
-**Minikube Service**
+**`Minikube Service`**
 
 ![Alt text](./images/minikube.png)
 
-**localhost**
+**`Application`**
 
 ![Alt text](./images/app.png)
