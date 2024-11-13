@@ -140,7 +140,7 @@ kubectl describe pod <pod-name>
 
 
 
-![Alt text](./images/minikube.png)
+<!-- ![Alt text](./images/minikube.png) -->
 
 
 
