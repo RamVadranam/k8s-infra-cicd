@@ -138,7 +138,11 @@ kubectl describe pod <pod-name>
 ```
 ![Alt text](./images/docker.png)
 
+
+
 ![Alt text](./images/minikube.png)
+
+
 
 ![Alt text](./images/app.png)
 
