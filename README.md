@@ -148,10 +148,13 @@ kubectl describe pod <pod-name>
 ```
 
 **Docker Run**
+
 ![Alt text](./images/docker.png)
 
 **Minikube Service**
+
 ![Alt text](./images/minikube.png)
 
 **localhost**
+
 ![Alt text](./images/app.png)
