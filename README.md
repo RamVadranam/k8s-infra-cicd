@@ -75,6 +75,7 @@ image:
 
 Install or upgrade the Helm release:
 
+
 ```
 helm upgrade --install my-app ./helm --set image.repository=local/my-app --set image.tag=latest
 ```
