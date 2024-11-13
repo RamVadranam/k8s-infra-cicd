@@ -2,9 +2,12 @@
 
 This project is a simple Flask-based application deployed to a local Kubernetes cluster using Minikube and Helm.
 
-### Medium Article
+## Related Article
 
-For a detailed guide on this project, check out the [Medium article](https://medium.com/@ramchandra-vadranam/building-a-complete-ci-cd-pipeline-for-eks-with-aws-ecr-codepipeline-codebuild-and-helm-98ca37bc6b50) that explains the setup and deployment process.
+[![Kubernetes CI/CD Pipeline on AWS](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dbWgFi9E2hdFiHJzdW65Fg.png)](https://medium.com/@ramchandra-vadranam/building-a-complete-ci-cd-pipeline-for-eks-with-aws-ecr-codepipeline-codebuild-and-helm-98ca37bc6b50)
+
+For a detailed guide on setting up Kubernetes infrastructure with CI/CD on AWS, check out the full article on Medium:  
+[Read the Article](https://medium.com/@ramchandra-vadranam/building-a-complete-ci-cd-pipeline-for-eks-with-aws-ecr-codepipeline-codebuild-and-helm-98ca37bc6b50)
 
 ## Prerequisites
 
