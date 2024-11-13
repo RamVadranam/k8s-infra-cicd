@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.pytest_cache/
+*.pytest_cache
+*.coverage
+.coverage.*
+
+# Docker
+*.log
+*.tmp
+*.swp
+docker-compose.yml
+docker-compose.override.yml
+.dockerignore
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+crash.log
+*.tfvars.json
+
+# AWS Credentials and Sensitive Files
+*.pem
+*.key
+*.crt
+.env
+.env.*
+
+# Kubernetes and Helm
+.kube/
+.kubectl/
+helm/values-*.yaml  # Ignore custom Helm values files
+*.tgz                # Ignore Helm chart package files
+*/charts/            # Ignore Helm dependency charts
+secrets.yaml         # Helm secrets files
+
+# CodeBuild and CodePipeline
+buildspec.yml        # Exclude build configuration files (if customized)
+codepipeline-artifacts/
+
+# Compiled files
+*.o
+*.so
+*.out
+*.a
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# OS and System Files
+.DS_Store
+Thumbs.db
+desktop.ini

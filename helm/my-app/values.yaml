@@ -1,0 +1,4 @@
+image:
+  repository: "local/my-app"
+  tag: "latest"
+  pullPolicy: "IfNotPresent"

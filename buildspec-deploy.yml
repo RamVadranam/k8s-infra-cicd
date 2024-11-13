@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo "Setting up kubectl for local Minikube..."
+      - kubectl config use-context minikube
+  build:
+    commands:
+      - echo "Deploying to Kubernetes with Helm..."
+      - helm upgrade --install my-app ./helm/my-app --set image.repository=local/my-app --set image.tag=latest
+

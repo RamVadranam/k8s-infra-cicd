@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo "Logging in to local Docker..."
+      - docker login
+  build:
+    commands:
+      - echo "Building Docker image..."
+      - docker build -t local/my-app:latest .
+  post_build:
+    commands:
+      - echo "Pushing Docker image to local repository..."
+      - docker push local/my-app:latest
+
